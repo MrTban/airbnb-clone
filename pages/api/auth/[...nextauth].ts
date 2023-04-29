@@ -7,7 +7,7 @@ import bcrypt from 'bcrypt'
 
 import prisma from '@/app/libs/prismadb'
 
-export const authOption: AuthOptions = {
+export const authOptions: AuthOptions = {
 	adapter: PrismaAdapter(prisma),
 	providers: [
 		GithubProvider({
@@ -62,4 +62,4 @@ export const authOption: AuthOptions = {
 	secret: process.env.NEXTAUTH_SECRET,
 }
 
-export default NextAuth(authOption)
+export default NextAuth(authOptions)
