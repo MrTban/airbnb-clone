@@ -1,7 +1,7 @@
 'use client'
 
 import axios from 'axios'
-import { AiFillGift, AiFillGithub } from 'react-icons/ai'
+import { AiFillGithub } from 'react-icons/ai'
 import { FcGoogle } from 'react-icons/fc'
 import { useCallback, useState } from 'react'
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form'
@@ -39,7 +39,9 @@ const RegisterModal = () => {
 		axios
 			.post('/api/register', data)
 			.then(() => {
+				toast.success('Success')
 				registerModal.onClose()
+				loginModal.onOpen()
 			})
 			.catch((error) => {
 				toast.error('Something went wrong')
