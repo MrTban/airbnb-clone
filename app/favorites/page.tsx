@@ -5,6 +5,10 @@ import FavoritesClient from './FavoritesClient'
 import getCurrentUser from '../actions/getCurrentUser'
 import getFavoriteListings from '../actions/getFavoriteListings'
 
+export const metadata = {
+	title: 'Favorites',
+}
+
 const ListingPage = async () => {
 	const listings = await getFavoriteListings()
 	const currentUser = await getCurrentUser()

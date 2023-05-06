@@ -12,7 +12,10 @@ import ToasterProvider from './providers/ToasterProvider'
 import getCurrentUser from './actions/getCurrentUser'
 
 export const metadata = {
-	title: 'MrTban | Airbnb',
+	title: {
+		default: 'MrTban | Airbnb',
+		template: 'MrTban | Airbnb %s',
+	},
 	description: 'Airbnb clone',
 }
 
