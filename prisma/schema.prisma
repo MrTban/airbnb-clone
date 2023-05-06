@@ -20,6 +20,7 @@ model User {
   createdAt       DateTime @default(now())
   updatedAt       DateTime @updatedAt
   favoriteIds     String[] @db.ObjectId
+
   accounts        Account[]
   listings        Listing[]
   reservations    Reservation[]
@@ -40,6 +41,7 @@ model Account {
   session_state      String?
   
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
   @@unique([provider, providerAccountId])
 }
 
