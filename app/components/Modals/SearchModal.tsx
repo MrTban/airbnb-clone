@@ -80,7 +80,7 @@ const SearchModal = () => {
 			updateQuery.endDate = formatISO(dateRange.endDate)
 		}
 
-		const url = qs.stringify(
+		const url = qs.stringifyUrl(
 			{
 				url: '/',
 				query: updateQuery,
